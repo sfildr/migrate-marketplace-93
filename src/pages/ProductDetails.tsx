@@ -5,7 +5,8 @@ import { Footer } from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { useCartStore } from '@/store/cart';
 import { toast } from 'sonner';
-import { Star, StarHalf } from 'lucide-react';
+import { Star } from 'lucide-react';
+import { Product } from '@/lib/types';
 
 const ProductDetails = () => {
   const { id } = useParams();
@@ -13,11 +14,14 @@ const ProductDetails = () => {
   const [selectedImage, setSelectedImage] = useState(0);
 
   // Mock product data (replace with actual data fetching)
-  const product = {
-    id: id,
+  const product: Product = {
+    id: id || "1",
     name: "Premium Laptop",
     price: 1299.99,
     description: "High-performance laptop perfect for professionals and creative work. Features the latest processor, ample storage, and a stunning display.",
+    image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b",
+    category: "Laptops",
+    featured: true,
     specifications: [
       "Latest generation processor",
       "16GB RAM",
@@ -45,7 +49,16 @@ const ProductDetails = () => {
   };
 
   const handleAddToCart = () => {
-    addItem(product);
+    const cartProduct: Product = {
+      id: product.id,
+      name: product.name,
+      price: product.price,
+      description: product.description,
+      image: product.image,
+      category: product.category,
+      featured: product.featured
+    };
+    addItem(cartProduct);
     toast.success('Produto adicionado ao carrinho');
   };
 

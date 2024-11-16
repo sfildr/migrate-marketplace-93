@@ -6,6 +6,14 @@ export interface Product {
   image: string;
   category: string;
   featured?: boolean;
+  specifications?: string[];
+  images?: string[];
+  reviews?: {
+    id: number;
+    user: string;
+    rating: number;
+    comment: string;
+  }[];
 }
 
 export interface CartItem {
