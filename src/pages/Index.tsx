@@ -73,7 +73,7 @@ const Index = () => {
       <Navbar />
       
       {/* Hero Section */}
-      <section className="pt-20 bg-gradient-to-b from-primary to-primary/90 text-white">
+      <section className="h-screen bg-gradient-to-b from-primary to-primary/90 text-white flex items-center">
         <div className="container mx-auto py-20">
           <div className="max-w-2xl">
             <h1 className="text-5xl font-bold mb-6 animate-fade-in">
