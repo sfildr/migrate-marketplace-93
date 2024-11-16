@@ -1,5 +1,3 @@
-import { Navbar } from '@/components/Navbar';
-import { Footer } from '@/components/Footer';
 import { ProductCard } from '@/components/ProductCard';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Check } from 'lucide-react';
@@ -25,7 +23,6 @@ const featuredProducts = [
     category: 'Accessories',
     featured: true,
   },
-  // Add more mock products as needed
 ];
 
 const categories = [
@@ -70,8 +67,6 @@ const pricingPlans = [
 const Index = () => {
   return (
     <div className="min-h-screen">
-      <Navbar />
-      
       {/* Hero Section */}
       <section className="h-screen bg-gradient-to-b from-primary to-primary/90 text-white flex items-center">
         <div className="container mx-auto py-20">
@@ -172,8 +167,6 @@ const Index = () => {
           </div>
         </div>
       </section>
-      
-      <Footer />
     </div>
   );
 };
